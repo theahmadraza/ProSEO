@@ -1,0 +1,86 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  # Fast, dependency-free gate. Runs first so a leak fails the build in seconds.
+  leak-guard:
+    name: No private paths or client identifiers
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Scan tracked files for forbidden strings
+        run: |
+          set -uo pipefail
+          status=0
+          # Each pattern is something that must never reach this public repo:
+          # the former default client site, developer-machine paths, and the
+          # names of sites ProSEO was used to audit privately.
+          # Patterns are assembled from fragments so this workflow does not
+          # match its own list. The pathspec excludes it as a second guard.
+          patterns="thepro""coders|/Users/[a-z]|diri""go|ranken""stein|ashe""nda|ThePro""coder|sana@""strategize"
+          IFS='|'
+          for pattern in $patterns; do
+            unset IFS
+            if git grep -nIiE -- "$pattern" -- . ':(exclude).github/workflows/ci.yml' >/dev/null 2>&1; then
+              echo "::error::Forbidden pattern found in tracked files: $pattern"
+              git grep -nIiE -- "$pattern" -- . ':(exclude).github/workflows/ci.yml' || true
+              status=1
+            fi
+            IFS='|'
+          done
+          unset IFS
+          if [ "$status" -eq 0 ]; then
+            echo "Clean: none of the forbidden patterns are present."
+          fi
+          exit "$status"
+
+  consistency:
+    name: Reference graph and portability
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Consistency gate
+        run: python3 scripts/consistency_check.py
+
+      - name: Portability lint
+        run: python3 scripts/portability_check.py
+
+  tests:
+    name: Test suite
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: System libraries for WeasyPrint
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libpango-1.0-0 libpangoft2-1.0-0 libharfbuzz0b \
+            libfontconfig1 libcairo2
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install pytest
+
+      - name: Run tests
+        run: python -m pytest tests/ -q

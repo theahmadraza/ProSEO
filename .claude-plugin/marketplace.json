@@ -1,0 +1,70 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "pro-seo",
+  "owner": {
+    "name": "Ahmad Raza",
+    "url": "https://github.com/theahmadraza"
+  },
+  "metadata": {
+    "description": "ProSEO: comprehensive SEO plugin for Claude Code. 31 sub-skills (27 core + 1 orchestrator + 1 framework integration + 2 extension mirrors) and 18 sub-agents covering the full SEO Lifecycle: technical SEO, content quality (E-E-A-T), schema, sitemaps, Core Web Vitals, local SEO, backlinks, AI/GEO, ecommerce, hreflang, SXO, clustering, keyword research, internal linking, content refresh, migrations, reporting, drift monitoring, and Google APIs."
+  },
+  "plugins": [
+    {
+      "name": "pro-seo",
+      "source": "./",
+      "description": "ProSEO: comprehensive SEO plugin for Claude Code. 31 sub-skills (27 core + 1 orchestrator + 1 framework integration + 2 extension mirrors) and 18 sub-agents covering the full SEO Lifecycle: technical SEO, content quality (E-E-A-T), schema, sitemaps, Core Web Vitals, local SEO, backlinks, AI/GEO, ecommerce, hreflang, SXO, clustering, keyword research, internal linking, content refresh, migrations, reporting, drift monitoring, and Google APIs.",
+      "author": {
+        "name": "Ahmad Raza",
+        "url": "https://github.com/theahmadraza"
+      },
+      "category": "marketing",
+      "keywords": [
+        "ai-citation-optimization",
+        "ai-search",
+        "backlink-verification",
+        "backlinks",
+        "bing-webmaster",
+        "common-crawl",
+        "content-parity",
+        "content-quality",
+        "content-refresh",
+        "core-web-vitals",
+        "crux",
+        "cultural-profiles",
+        "drift-monitoring",
+        "e-e-a-t",
+        "ecommerce-seo",
+        "ga4",
+        "geo",
+        "google-images",
+        "google-search-console",
+        "google-shopping",
+        "headless-rendering",
+        "hreflang",
+        "image-optimization",
+        "image-serp",
+        "internal-linking",
+        "keyword-research",
+        "local-seo",
+        "mcp-extensions",
+        "moz",
+        "pagespeed",
+        "schema-markup",
+        "search-experience",
+        "semantic-clustering",
+        "seo",
+        "seo-lifecycle",
+        "seo-reporting",
+        "site-migration",
+        "sitemap",
+        "ssrf-safe-fetchers",
+        "sxo",
+        "synthesis-framework",
+        "technical-seo",
+        "topic-clusters"
+      ],
+      "license": "AGPL-3.0-or-later"
+    }
+  ],
+  "renames": {}
+}

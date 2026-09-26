@@ -1,0 +1,11 @@
+ProSEO
+Copyright (c) 2026 Ahmad Raza
+
+Licensed under the GNU Affero General Public License, version 3 or later.
+The full licence text is in the LICENSE file at the root of the ProSEO
+distribution, and third-party attributions are in NOTICE.
+
+This component began as a derivative of claude-seo (Copyright (c) 2026
+agricidaniel), which is MIT licensed; the MIT License permits the combined work
+to be distributed under the AGPL. The upstream MIT notice is reproduced in full
+in the root NOTICE file.
