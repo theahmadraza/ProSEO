@@ -160,7 +160,7 @@ Bug reports, fixes and new checks are welcome. Read
 consistency gate before opening a pull request. Report security issues
 privately as described in [SECURITY.md](SECURITY.md).
 
-## Credits & License
+## License
 
 ProSEO is **copyright © 2026 Ahmad Raza** and licensed under the
 [GNU Affero General Public License v3.0 or later](LICENSE).
@@ -177,7 +177,4 @@ available — raise an issue on this repository to ask about it.
 The name **ProSEO** and its logo are marks of Ahmad Raza and are not covered by
 the AGPL. Forks are welcome; presenting one as ProSEO is not.
 
-ProSEO began as a derivative of [claude-seo](https://github.com/agricidaniel/claude-seo)
-by agricidaniel and retains portions of it under the MIT License. The bundled
-FLOW prompt library is CC BY 4.0 by its authors. Full attributions are in
-[NOTICE](NOTICE).
+Third-party notices are in [NOTICE](NOTICE).

@@ -11,8 +11,7 @@ user-invocable: true
 argument-hint: "[url-or-keyword] [page-type]"
 license: AGPL-3.0-or-later
 metadata:
-  author: puneetindersingh
-  original_author: puneetindersingh
+  author: Ahmad Raza
   version: "1.0.0"
   category: seo
 ---

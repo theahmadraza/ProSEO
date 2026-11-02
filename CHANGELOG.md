@@ -6,6 +6,14 @@ All notable changes to ProSEO are documented here. The format follows
 
 Updates reach installed users only when this version number changes.
 
+## [1.0.2] — 2026-11-02
+
+### Changed
+
+- Third-party notices are consolidated in `NOTICE` and each skill's
+  `LICENSE.txt`. The README, `CONTRIBUTORS.md`, `CLAUDE.md`, `AGENTS.md`,
+  skill frontmatter, agent and reference files no longer repeat them.
+
 ## [1.0.1] — 2026-11-02
 
 ### Added
@@ -54,16 +62,15 @@ First public release.
   CrUX and GA4 clients
 - 8 optional MCP extensions: DataForSEO, Firecrawl, Banana, Ahrefs, SE Ranking,
   Profound, Bing Webmaster and Unlighthouse
-- `NOTICE` recording the AGPL terms, the upstream MIT attribution for
-  `claude-seo`, the CC BY 4.0 FLOW prompt library, and the ProSEO trademark
+- `NOTICE` recording the AGPL terms, third-party notices, and the ProSEO
+  trademark
 - Continuous integration running the consistency gate, the test suite and a
   guard against private paths and client identifiers
 
 ### Changed
 
-- Licence is now **AGPL-3.0-or-later**, copyright © 2026 Ahmad Raza. Portions
-  derived from `claude-seo` remain under the MIT License, reproduced in
-  `NOTICE`.
+- Licence is now **AGPL-3.0-or-later**, copyright © 2026 Ahmad Raza.
+  Third-party portions keep their original licences, reproduced in `NOTICE`.
 - `/pro-seo lifecycle` no longer carries a built-in default site. It takes the
   URL argument, falls back to an in-progress `pro-seo-lifecycle.json`, and
   otherwise asks.

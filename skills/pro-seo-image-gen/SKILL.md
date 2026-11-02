@@ -7,7 +7,7 @@ license: AGPL-3.0-or-later
 compatibility: "Requires nanobanana MCP server"
 metadata:
   author: Ahmad Raza
-  version: "1.0.1"
+  version: "1.0.2"
   category: seo
 ---
 

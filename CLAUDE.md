@@ -18,7 +18,7 @@ SEO, and international SEO with cultural adaptation profiles.
 ```
 pro-seo/
   CLAUDE.md                          # Project instructions (this file)
-  CONTRIBUTORS.md                    # Upstream and community credits
+  CONTRIBUTORS.md                    # Maintainer and contribution terms
   CONTRIBUTING.md                    # How to contribute, run checks, and release
   AGENTS.md                          # Multi-platform agent instructions (Cursor, Antigravity)
   .claude-plugin/
@@ -55,17 +55,17 @@ pro-seo/
       SKILL.md
       references/                # API reference files (11 files)
     pro-seo-backlinks/SKILL.md      # Backlink profile analysis
-    pro-seo-cluster/                 # Semantic topic clustering (by Lutfiya Miller)
+    pro-seo-cluster/                 # Semantic topic clustering
       SKILL.md
       references/                # Clustering methodology, architecture, workflow
       templates/                 # cluster-map.html interactive visualization
-    pro-seo-sxo/                     # Search Experience Optimization (by Florian Schmitz)
+    pro-seo-sxo/                     # Search Experience Optimization
       SKILL.md
       references/                # Page-type taxonomy, user stories, personas, wireframes
-    pro-seo-drift/                   # SEO drift monitoring (by Dan Colta)
+    pro-seo-drift/                   # SEO drift monitoring
       SKILL.md
       references/                # Comparison rules (17 rules, 3 severity levels)
-    pro-seo-ecommerce/               # E-commerce SEO (by Matej Marjanovic)
+    pro-seo-ecommerce/               # E-commerce SEO
       SKILL.md
       references/                # Marketplace API endpoints
     pro-seo-dataforseo/SKILL.md     # Live SEO data via DataForSEO MCP (extension mirror)

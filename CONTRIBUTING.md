@@ -89,6 +89,5 @@ Installed copies update only when the version changes, so every release bumps it
 ## Licence
 
 ProSEO is [AGPL-3.0-or-later](LICENSE). By opening a pull request you agree that
-your contribution is licensed under the same terms. Upstream and community
-credits are in [CONTRIBUTORS.md](CONTRIBUTORS.md) and [NOTICE](NOTICE); keep
-those notices intact.
+your contribution is licensed under the same terms. Third-party notices live in
+[NOTICE](NOTICE) and the `LICENSE.txt` file in each skill; keep them intact.

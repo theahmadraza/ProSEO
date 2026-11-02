@@ -191,8 +191,6 @@ extensions/                # 8 MCP extensions: DataForSEO, Firecrawl, Banana, Ah
 3. **Security**: Scripts that fetch user-supplied URLs go through `scripts/url_safety.py` (`validate_url_strict()` plus pinned safe fetchers) for SSRF protection
 4. **Config location**: `~/.config/pro-seo/` for API credentials
 
-## Credits
+## Maintainer
 
-Maintained by Ahmad Raza.
-Community contributions by Lutfiya Miller, Chris Muller, Florian Schmitz,
-Dan Colta, and Matej Marjanovic. See [CONTRIBUTORS.md](CONTRIBUTORS.md).
+Maintained by Ahmad Raza. Third-party notices are in [NOTICE](NOTICE).
