@@ -2,7 +2,7 @@
 name: pro-seo-profound
 description: Profound LLM citation tracker (extension). Time-series brand citation rates across ChatGPT, Perplexity, and other LLMs. Pairs with pro-seo-seranking for triangulated AI visibility coverage.
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
 compatibility: "Requires a Profound API key (set PROFOUND_API_KEY by running extensions/profound/install.sh)."
 ---
 

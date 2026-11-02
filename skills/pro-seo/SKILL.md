@@ -6,7 +6,7 @@ argument-hint: "[command] [url]"
 license: AGPL-3.0-or-later
 metadata:
   author: Ahmad Raza
-  version: "1.0.0"
+  version: "1.0.1"
   category: seo
 ---
 
@@ -20,7 +20,7 @@ installs expose this command automatically. Repository users run
 launcher path. Never invoke bundled scripts with a bare Python interpreter.
 
 Comprehensive SEO analysis across all industries (SaaS, local services,
-e-commerce, publishers, agencies). Orchestrates 31 sub-skills (28 core + 1 framework
+e-commerce, publishers, agencies). Orchestrates the other 30 sub-skills (27 core + 1 framework
 integration + 2 extension mirrors) and 18 sub-agents. A separate optional Firecrawl
 extension is also installable (see "Optional Extensions" below).
 

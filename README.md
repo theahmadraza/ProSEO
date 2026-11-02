@@ -1,6 +1,6 @@
 # ProSEO — SEO Skills & SEO Lifecycle for Claude Code
 
-**ProSEO** is a comprehensive SEO plugin for [Claude Code](https://claude.ai/claude-code).
+**ProSEO** is a comprehensive SEO plugin for [Claude Code](https://claude.com/claude-code).
 It ships **31 sub-skills and 18 specialist agents** covering the full **SEO Lifecycle** —
 Discover → Plan → Build → Optimize → Authority → Measure → Iterate — across technical SEO,
 content quality (E-E-A-T), Schema.org markup, AI search optimization (GEO), local SEO,
@@ -30,6 +30,9 @@ plugin data and installs Playwright Chromium. Check it at any time with
 ```bash
 bash install.sh
 ```
+
+Every install path, the file layout it creates, and how to uninstall are in
+[docs/INSTALLATION.md](docs/INSTALLATION.md).
 
 ### Windows (PowerShell)
 
@@ -149,6 +152,13 @@ default and cannot be turned on from this end.
 Every release is tagged and listed under
 [Releases](https://github.com/theahmadraza/ProSEO/releases) with its changes in
 [CHANGELOG.md](CHANGELOG.md).
+
+## Contributing
+
+Bug reports, fixes and new checks are welcome. Read
+[CONTRIBUTING.md](CONTRIBUTING.md) for how to run the test suite and the
+consistency gate before opening a pull request. Report security issues
+privately as described in [SECURITY.md](SECURITY.md).
 
 ## Credits & License
 

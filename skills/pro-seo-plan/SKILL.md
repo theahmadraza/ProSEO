@@ -11,7 +11,7 @@ argument-hint: "[business-type]"
 license: AGPL-3.0-or-later
 metadata:
   author: Ahmad Raza
-  version: "1.0.0"
+  version: "1.0.1"
   category: seo
 ---
 

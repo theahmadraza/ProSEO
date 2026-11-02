@@ -14,29 +14,47 @@ jobs:
     name: No private paths or client identifiers
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Scan tracked files for forbidden strings
+        env:
+          # Pipe-separated, case-insensitive extended regexes kept in a repository
+          # secret, so this public file does not publish the names it protects.
+          # Pull requests from forks receive no secrets and run the public
+          # patterns only.
+          PRIVATE_PATTERNS: ${{ secrets.LEAK_GUARD_PATTERNS }}
         run: |
           set -uo pipefail
           status=0
-          # Each pattern is something that must never reach this public repo:
-          # the former default client site, developer-machine paths, and the
-          # names of sites ProSEO was used to audit privately.
-          # Patterns are assembled from fragments so this workflow does not
-          # match its own list. The pathspec excludes it as a second guard.
-          patterns="thepro""coders|/Users/[a-z]|diri""go|ranken""stein|ashe""nda|ThePro""coder|sana@""strategize"
-          IFS='|'
-          for pattern in $patterns; do
-            unset IFS
-            if git grep -nIiE -- "$pattern" -- . ':(exclude).github/workflows/ci.yml' >/dev/null 2>&1; then
-              echo "::error::Forbidden pattern found in tracked files: $pattern"
-              git grep -nIiE -- "$pattern" -- . ':(exclude).github/workflows/ci.yml' || true
+          scan() {
+            local label="$1" pattern="$2" show="$3"
+            if git grep -qIiE -- "$pattern" -- . ':(exclude).github/workflows/ci.yml'; then
+              echo "::error::Forbidden ${label} found in tracked files"
+              if [ "$show" = "content" ]; then
+                git grep -nIiE -- "$pattern" -- . ':(exclude).github/workflows/ci.yml' || true
+              else
+                # Locations only: printing the matching line would publish the
+                # private string in this public log.
+                git grep -nIiE -- "$pattern" -- . ':(exclude).github/workflows/ci.yml' | cut -d: -f1,2 || true
+              fi
               status=1
             fi
-            IFS='|'
-          done
-          unset IFS
+          }
+
+          # Developer-machine home paths.
+          scan "developer path" '/Users/[a-z]' content
+
+          if [ -n "${PRIVATE_PATTERNS:-}" ]; then
+            IFS='|' read -r -a private <<< "$PRIVATE_PATTERNS"
+            for pattern in "${private[@]}"; do
+              if [ -n "$pattern" ]; then
+                scan "private identifier" "$pattern" locations
+              fi
+            done
+          else
+            echo "::notice::LEAK_GUARD_PATTERNS is not available; scanned public patterns only."
+          fi
+
           if [ "$status" -eq 0 ]; then
             echo "Clean: none of the forbidden patterns are present."
           fi
@@ -46,9 +64,9 @@ jobs:
     name: Reference graph and portability
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
@@ -62,9 +80,9 @@ jobs:
     name: Test suite
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: pip

@@ -7,7 +7,7 @@ license: AGPL-3.0-or-later
 compatibility: "Free: Common Crawl + verify always available. Optional: Moz API, Bing Webmaster (free signup). Premium: DataForSEO extension."
 metadata:
   author: Ahmad Raza
-  version: "1.0.0"
+  version: "1.0.1"
   category: seo
 ---
 

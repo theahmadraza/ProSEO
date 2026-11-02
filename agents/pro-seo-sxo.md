@@ -93,7 +93,7 @@ Before presenting results, verify:
 - [ ] Mismatch severity is clearly rated
 - [ ] Limitations section is present
 
-## Fetching pages (v2.0.0)
+## Fetching pages
 
 Use `pro-seo run render_page.py <URL> --mode auto --json` for page HTML. `auto` does a raw fetch and only spins up Playwright when an SPA shell is detected; use `--mode always` to force a render or `--mode never` to skip Playwright entirely. The JSON exposes `raw_content` (pre-JS), `content` (post-JS), `is_spa`, `extracted_text` (boilerplate-stripped via trafilatura), and `publication_date` (htmldate). SSRF and DNS-rebinding protection live in `scripts/url_safety.py`, never call `requests.get` directly on user-supplied URLs.
 

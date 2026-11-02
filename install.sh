@@ -13,7 +13,7 @@ main() {
     # This default MUST be bumped on every release. CI guard
     # (tests/test_manifest_consistency.py) enforces this matches plugin.json.
     # Override: PRO_SEO_TAG=main bash install.sh
-    REPO_TAG="${PRO_SEO_TAG:-v1.0.0}"
+    REPO_TAG="${PRO_SEO_TAG:-v1.0.1}"
 
     echo "════════════════════════════════════════"
     echo "║   ProSEO - Installer             ║"

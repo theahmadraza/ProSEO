@@ -51,12 +51,8 @@ node_modules/
 *.zip
 *.tar.gz
 
-# Screenshots: ignore directory contents by default (audit outputs grow fast);
-# README-referenced assets are whitelisted below. Note: we use screenshots/*
-# (not screenshots/) so the `!screenshots/foo` re-include rules work.
-screenshots/*
-!screenshots/pro-seo-command-demo.gif
-!screenshots/pro-seo-audit-demo.gif
+# Screenshots captured during audits (outputs grow fast)
+screenshots/
 
 # Brand kit reference renders (PNG snapshots of the SVG comparison page).
 # The SVGs themselves under assets/ ship; the PNGs are scratch references.
@@ -95,14 +91,8 @@ sitemap-validation-report.md
 *-validation-report.md
 
 # Temporary download directories
-claude-ads-main/
+ProSEO-main/
 pro-seo-main/
-
-# Root-level duplicate media files (originals live in screenshots/)
-Cover Image.jpeg
-seo audit demo.gif
-seo command demo.gif
-.github-audit/
 
 # Generated Google SEO reports
 Google-SEO-Report-*.html
@@ -145,9 +135,6 @@ ECOMMERCE-ANALYSIS*.md
 Google-API-Setup-Guide-*.html
 scripts/generate_setup_guide.py
 
-# The documentation site at https://pro-seo.info lives in its own repository,
-# so cloning the plugin does not drag a website along with it.
-
 # Git worktrees (isolated workspaces for parallel branch work)
 .worktrees/
 
@@ -158,7 +145,7 @@ video-script-*.md
 youtube-shorts-*.md
 youtube-description*.md
 
-# Release decks + Remotion video work (mirrors claude-ads pattern: in-tree, untracked)
+# Release decks and video work (kept in-tree, untracked)
 presentations/
 
 # Internal implementation plans / specs (working notes, not user docs)
@@ -166,7 +153,6 @@ docs/superpowers/
 
 # Internal project-management records (private; must not ship to public origin)
 MEMORY.md
-docs/BACKLOG-COMPLETION-REPORT-v2.md
 docs/*COMPLETION-REPORT*.md
 docs/VERIFICATION-AUDIT*.md
 
@@ -180,5 +166,5 @@ id_rsa.*
 id_ed25519
 id_ed25519.*
 
-# Netlify CLI link state (the site lives in ../proseo-site now)
+# Netlify CLI link state
 .netlify/

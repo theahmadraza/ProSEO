@@ -1,0 +1,15 @@
+name: Licensing question
+description: Ask about a commercial licence or how the AGPL applies to your use.
+labels: [licensing]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ProSEO is AGPL-3.0-or-later. A commercial licence that removes the source-disclosure obligation is available. Describe your use below; this issue is public, so leave out anything confidential.
+  - type: textarea
+    id: use
+    attributes:
+      label: How you plan to use ProSEO
+      description: For example an internal tool, a hosted service, or bundling it in a product.
+    validations:
+      required: true

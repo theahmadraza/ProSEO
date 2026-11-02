@@ -1,0 +1,23 @@
+name: Feature request
+description: A new check, skill, or improvement to an existing one.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What SEO question can you not answer today, or what does an existing skill get wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you would like
+      description: The behaviour or output you want. Link primary sources (Google documentation, specs) where they exist.
+    validations:
+      required: true
+  - type: input
+    id: skill
+    attributes:
+      label: Related skill
+      placeholder: pro-seo-schema

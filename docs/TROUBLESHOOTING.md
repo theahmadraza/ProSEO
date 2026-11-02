@@ -90,7 +90,7 @@ cat ~/ProSEO/requirements.txt \
 
 **Symptom:** `python is not recognized` or `pip points to wrong Python`
 
-**Solution (v1.2.0+):** The Windows installer now tries both `python` and `py -3`. If both fail:
+**Solution:** The Windows installer tries both `python` and `py -3`. If both fail:
 
 1. Install Python from [python.org](https://python.org) and check "Add to PATH"
 2. Rerun `install.ps1`; it resolves `py -3`, `python3`, then `python`

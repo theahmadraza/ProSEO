@@ -21,7 +21,8 @@ Each skill's `SKILL.md` records its `original_author` in frontmatter.
 | `pro-seo-ecommerce` — e-commerce SEO | Matej Marjanovic (Pro Hub Challenge) |
 | `pro-seo-content-brief` — competitive content briefs | puneetindersingh |
 
-Thanks also to **Chris Muller** for contributions to the v1.9.0 release.
+Thanks also to **Chris Muller**, whose cultural profiles, locale formats and
+content-parity references for `pro-seo-hreflang` ProSEO carries forward.
 
 ## Third-party content
 
@@ -30,5 +31,6 @@ authors; `scripts/sync_flow.py` preserves their attribution headers.
 
 ## Contributing
 
-ProSEO is licensed [AGPL-3.0-or-later](LICENSE). By opening a pull request you
-agree that your contribution is licensed under those same terms.
+See [CONTRIBUTING.md](CONTRIBUTING.md). ProSEO is licensed
+[AGPL-3.0-or-later](LICENSE); by opening a pull request you agree that your
+contribution is licensed under those same terms.

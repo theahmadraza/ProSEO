@@ -1,0 +1,42 @@
+name: Bug report
+description: A command failed, crashed, or produced a wrong result.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Security issues do not belong here. Report them privately as described in SECURITY.md.
+  - type: input
+    id: command
+    attributes:
+      label: Command
+      description: The exact command you ran.
+      placeholder: /pro-seo technical https://example.com
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: Paste the error or describe the wrong result. Remove anything private first.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: doctor
+    attributes:
+      label: Output of /pro-seo doctor
+      render: text
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: ProSEO version, Claude Code version, operating system.
+      placeholder: ProSEO 1.0.1, Claude Code 2.x, macOS 15
+    validations:
+      required: true

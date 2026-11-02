@@ -6,6 +6,35 @@ All notable changes to ProSEO are documented here. The format follows
 
 Updates reach installed users only when this version number changes.
 
+## [1.0.1] — 2026-11-02
+
+### Added
+
+- `CONTRIBUTING.md` with setup, the checks CI runs, conventions and the release
+  steps; issue forms for bugs, feature requests and licensing questions; a pull
+  request template
+- `plugin.json` now names the repository, and its homepage is the
+  documentation site, https://pro-seo.info
+
+### Changed
+
+- The CI leak guard reads its private patterns from a repository secret instead
+  of listing them in the workflow, and reports matches by location only
+- CI uses `actions/checkout@v5` and `actions/setup-python@v6`
+
+### Fixed
+
+- `CLAUDE.md` and `AGENTS.md` gave the orchestrator path as `skills/seo/`
+  (it is `skills/pro-seo/`) and omitted the lifecycle, keywords,
+  internal-links, refresh, migration and report skills and the setup and
+  doctor commands
+- `CLAUDE.md` listed `mobile_analysis.py`, which does not ship, instead of
+  `runtime.py`
+- The orchestrator stated its sub-skill breakdown as 28 core; it routes to 27
+  core skills, the framework integration and two extension mirrors
+- Removed version labels inherited from the upstream project (v1.9.0, v2.0.0)
+  from the docs and agents, and upstream leftovers from `.gitignore`
+
 ## [1.0.0] — 2026-09-27
 
 First public release.

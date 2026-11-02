@@ -18,15 +18,23 @@ SEO, and international SEO with cultural adaptation profiles.
 ```
 pro-seo/
   CLAUDE.md                          # Project instructions (this file)
-  CONTRIBUTORS.md                    # Community credits (Pro Hub Challenge)
+  CONTRIBUTORS.md                    # Upstream and community credits
+  CONTRIBUTING.md                    # How to contribute, run checks, and release
   AGENTS.md                          # Multi-platform agent instructions (Cursor, Antigravity)
   .claude-plugin/
-    plugin.json                    # Plugin manifest (v1.0.0)
+    plugin.json                    # Plugin manifest (single source of the version)
     marketplace.json               # Marketplace catalog for distribution
+  bin/pro-seo                        # Launcher placed on PATH while the plugin is enabled
   skills/                            # 31 sub-skills (auto-discovered)
-    seo/                           # Main orchestrator skill
+    pro-seo/                       # Main orchestrator skill
       SKILL.md                     # Entry point, routing table, core rules
       references/                  # On-demand knowledge files (13 files)
+    pro-seo-lifecycle/SKILL.md       # SEO Lifecycle orchestrator (Discover → Iterate)
+    pro-seo-keywords/SKILL.md        # Keyword research and prioritization
+    pro-seo-internal-links/SKILL.md  # Internal link graph, orphans, link opportunities
+    pro-seo-refresh/SKILL.md         # Content decay detection and refresh plans
+    pro-seo-migration/SKILL.md       # Site migration redirect maps and validation
+    pro-seo-report/SKILL.md          # Client-ready report from prior analyses
     pro-seo-audit/SKILL.md            # Full site audit with parallel agents
     pro-seo-page/SKILL.md            # Deep single-page analysis
     pro-seo-technical/SKILL.md       # Technical SEO (9 categories)
@@ -47,17 +55,17 @@ pro-seo/
       SKILL.md
       references/                # API reference files (11 files)
     pro-seo-backlinks/SKILL.md      # Backlink profile analysis
-    pro-seo-cluster/                 # Semantic topic clustering (v1.9.0, by Lutfiya Miller)
+    pro-seo-cluster/                 # Semantic topic clustering (by Lutfiya Miller)
       SKILL.md
       references/                # Clustering methodology, architecture, workflow
       templates/                 # cluster-map.html interactive visualization
-    pro-seo-sxo/                     # Search Experience Optimization (v1.9.0, by Florian Schmitz)
+    pro-seo-sxo/                     # Search Experience Optimization (by Florian Schmitz)
       SKILL.md
       references/                # Page-type taxonomy, user stories, personas, wireframes
-    pro-seo-drift/                   # SEO drift monitoring (v1.9.0, by Dan Colta)
+    pro-seo-drift/                   # SEO drift monitoring (by Dan Colta)
       SKILL.md
       references/                # Comparison rules (17 rules, 3 severity levels)
-    pro-seo-ecommerce/               # E-commerce SEO (v1.9.0, by Matej Marjanovic)
+    pro-seo-ecommerce/               # E-commerce SEO (by Matej Marjanovic)
       SKILL.md
       references/                # Marketplace API endpoints
     pro-seo-dataforseo/SKILL.md     # Live SEO data via DataForSEO MCP (extension mirror)
@@ -137,7 +145,7 @@ pro-seo/
     consistency_check.py         # Reference-graph gate: dead refs, routing, lock, orphans
     release_sign.py              # SHA-256 manifest generator for release signing
     verify_release.py            # Verify checkout integrity against a release manifest
-    mobile_analysis.py           # Mobile rendering analysis (gitignored, dev-only)
+    runtime.py                   # Managed runtime behind bin/pro-seo (setup, doctor, run)
   schema/                          # Schema.org JSON-LD templates
   extensions/                      # Optional add-on install helpers
     dataforseo/                  # DataForSEO MCP install scripts
@@ -155,6 +163,14 @@ pro-seo/
 
 | Command | Use Case |
 |---------|----------|
+| `/pro-seo setup` | Create or refresh the isolated Python runtime and Chromium |
+| `/pro-seo doctor` | Diagnose the runtime installation |
+| `/pro-seo lifecycle [stage] [url]` | Staged SEO programme: Discover → Plan → Build → Optimize → Authority → Measure → Iterate |
+| `/pro-seo keywords <topic or url>` | Keyword research, intent mapping, prioritization matrix |
+| `/pro-seo internal-links <url>` | Internal linking audit and opportunity map |
+| `/pro-seo refresh <url>` | Content decay detection and refresh plan |
+| `/pro-seo migration [plan\|validate] <url>` | Site migration redirect mapping and post-launch validation |
+| `/pro-seo report <url>` | Client-ready SEO report from prior analyses |
 | `/pro-seo audit <url>` | Full website audit with parallel subagents |
 | `/pro-seo page <url>` | Single page analysis |
 | `/pro-seo technical <url>` | Technical SEO across 9 categories |

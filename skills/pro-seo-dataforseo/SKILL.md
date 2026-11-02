@@ -13,7 +13,7 @@ license: AGPL-3.0-or-later
 compatibility: "Requires DataForSEO MCP server"
 metadata:
   author: Ahmad Raza
-  version: "1.0.0"
+  version: "1.0.1"
   category: seo
 ---
 

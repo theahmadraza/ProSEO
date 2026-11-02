@@ -119,7 +119,7 @@ $AgentDir = "$env:USERPROFILE\.claude\agents"
 # This default MUST be bumped on every release. CI guard
 # (tests/test_manifest_consistency.py) enforces this matches plugin.json.
 # Override: $env:PRO_SEO_TAG = 'main'; .\install.ps1
-$RepoTag = if ($env:PRO_SEO_TAG) { $env:PRO_SEO_TAG } else { 'v1.0.0' }
+$RepoTag = if ($env:PRO_SEO_TAG) { $env:PRO_SEO_TAG } else { 'v1.0.1' }
 
 # Create directories
 New-Item -ItemType Directory -Force -Path $SkillDir | Out-Null

@@ -7,7 +7,7 @@
 >
 > Claude Code users: see `CLAUDE.md` instead.
 
-## Cross-platform portability (v2.0.0)
+## Cross-platform portability
 
 Every skill in `skills/*/SKILL.md` is authored to a portable subset of the
 Claude Code skill spec. Validate compatibility with your harness via:
@@ -62,6 +62,14 @@ integration + 2 extension mirrors), and 53 Python execution scripts.
 
 | Command | What it does |
 |---------|-------------|
+| `/pro-seo setup` | Create or refresh the isolated Python runtime and Chromium |
+| `/pro-seo doctor` | Diagnose the runtime installation |
+| `/pro-seo lifecycle [stage] [url]` | Staged SEO programme: Discover → Plan → Build → Optimize → Authority → Measure → Iterate |
+| `/pro-seo keywords <topic or url>` | Keyword research, intent mapping, prioritization matrix |
+| `/pro-seo internal-links <url>` | Internal linking audit and opportunity map |
+| `/pro-seo refresh <url>` | Content decay detection and refresh plan |
+| `/pro-seo migration [plan\|validate] <url>` | Site migration redirect mapping and post-launch validation |
+| `/pro-seo report <url>` | Client-ready SEO report from prior analyses |
 | `/pro-seo audit <url>` | Full website audit with parallel subagent delegation |
 | `/pro-seo page <url>` | Deep single-page analysis |
 | `/pro-seo technical <url>` | Technical SEO audit (9 categories) |
@@ -139,11 +147,17 @@ bash install.sh
 
 ```
 skills/                    # 31 sub-skills (auto-discovered)
-  seo/SKILL.md            # Main orchestrator + routing
-  pro-seo-cluster/            # Semantic clustering (v1.9.0)
-  pro-seo-sxo/                # Search Experience Optimization (v1.9.0)
-  pro-seo-drift/              # SEO drift monitoring (v1.9.0)
-  pro-seo-ecommerce/          # E-commerce SEO (v1.9.0)
+  pro-seo/SKILL.md            # Main orchestrator + routing
+  pro-seo-lifecycle/          # SEO Lifecycle orchestrator (Discover → Iterate)
+  pro-seo-keywords/           # Keyword research
+  pro-seo-internal-links/     # Internal linking
+  pro-seo-refresh/            # Content refresh
+  pro-seo-migration/          # Site migrations
+  pro-seo-report/             # Client-ready reports
+  pro-seo-cluster/            # Semantic clustering
+  pro-seo-sxo/                # Search Experience Optimization
+  pro-seo-drift/              # SEO drift monitoring
+  pro-seo-ecommerce/          # E-commerce SEO
   pro-seo-audit/              # Full site audit
   pro-seo-page/               # Single-page analysis
   pro-seo-technical/          # Technical SEO
@@ -174,11 +188,11 @@ extensions/                # 8 MCP extensions: DataForSEO, Firecrawl, Banana, Ah
 
 1. **Progressive Disclosure**: Read SKILL.md for routing, load references on demand
 2. **Industry Detection**: Auto-detect SaaS, e-commerce, local, publisher, agency
-3. **Security**: All scripts call `validate_url()` for SSRF protection
+3. **Security**: Scripts that fetch user-supplied URLs go through `scripts/url_safety.py` (`validate_url_strict()` plus pinned safe fetchers) for SSRF protection
 4. **Config location**: `~/.config/pro-seo/` for API credentials
 
 ## Credits
 
 Maintained by Ahmad Raza.
-v1.9.0 community contributions by Lutfiya Miller, Chris Muller, Florian Schmitz,
+Community contributions by Lutfiya Miller, Chris Muller, Florian Schmitz,
 Dan Colta, and Matej Marjanovic. See [CONTRIBUTORS.md](CONTRIBUTORS.md).

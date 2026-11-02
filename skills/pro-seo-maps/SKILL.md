@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later
 compatibility: "DataForSEO MCP for Tier 1+, Google Maps API for Tier 2"
 metadata:
   author: Ahmad Raza
-  version: "1.0.0"
+  version: "1.0.1"
   category: seo
 ---
 

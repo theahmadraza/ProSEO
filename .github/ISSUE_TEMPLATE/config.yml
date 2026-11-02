@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://pro-seo.info
+    about: Every skill with usage notes, the getting-started guide and the lifecycle walkthrough.
+  - name: Report a security vulnerability
+    url: https://github.com/theahmadraza/ProSEO/security/advisories/new
+    about: Report privately. Do not open a public issue.

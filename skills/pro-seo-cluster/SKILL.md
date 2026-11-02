@@ -14,7 +14,7 @@ license: AGPL-3.0-or-later
 metadata:
   author: Ahmad Raza
   original_author: "Lutfiya Miller (Pro Hub Challenge Winner)"
-  version: "1.0.0"
+  version: "1.0.1"
   category: seo
 ---
 
